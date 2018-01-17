@@ -1,0 +1,21 @@
+<h3>I'm the parent of several children</h3>
+<ul>Choose one of them (or return to <a routerLink="/with-children">default</a>)
+	<li>
+		<a routerLink="/with-children/first-son">First son</a>
+	</li>
+	<li>
+		<a [routerLink]="['second-son']">Second son</a>
+	</li>
+	<li>
+		<a [routerLink]="['first-daughter']">First daughter</a>
+	</li>
+	<li>
+		<a [routerLink]="['seventh-son']">Seventh son</a>
+	</li>
+	<li>
+		<a [routerLink]="['seventh-son', 'seventh-son']">Seventh son of a seventh son</a>
+	</li>
+</ul>
+<div class="container">
+	<router-outlet></router-outlet>
+</div>

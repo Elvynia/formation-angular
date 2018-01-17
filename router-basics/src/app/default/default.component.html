@@ -1,0 +1,28 @@
+<div class="container">
+	<h2>Bienvenue dans les exemples d'utilisation du router</h2>
+	<p>Utiliser les liens ci-dessous pour naviguer en mode Signe Page Application (SPA). Chaque &lt;li&gt; utilise la directive "routerLink" afin de déclencher la navigation au travers du module Router d'Angular plutôt que via le navigateur. Le but de la navigation SPA est de toujours rester sur la même page web</p>
+	<form>
+		<h3>Choisissez les données envoyées :</h3>
+		<div class="form-group">
+			<label for="urlParam">URL param</label>
+			<input name="urlParam" id="urlParam" [(ngModel)]="urlParam" />
+		</div>
+		<div class="form-group">
+			<label for="queryParam">Query param</label>
+			<input name="queryParam" id="queryParam" [(ngModel)]="queryParam" />
+		</div>
+	</form>
+	<ul>
+		<!-- Utilisation de la directive routerLink sans les [], ce qui signifie que la valeur est une chaine de caractère constante. -->
+		<li routerLink="/hello">Hello</li>
+		<!-- Les liens avec routerLink fonctionnent aussi sans le '/' au début. -->
+		<li routerLink="hello">Hello (sans le '/')</li>
+		<li routerLink="/redirect-to-hello">Une autre URL qui redirige vers Hello</li>
+		<li routerLink="/with-url-param/{{urlParam}}">URL contenant une variable (urlParam)</li>
+		<!-- Utilisation de la directive queryParams avec [] pour définir un objet JavaScript au lieu d'un string. -->
+		<li routerLink="/with-query-param" [queryParams]="{text: queryParam}">URL contenant une variable (queryParam)</li>
+		<li routerLink="/with-data" >Route avec utilisation de la configuration 'data'</li>
+		<li routerLink="/with-other-data" >Autre route utilisant 'data' avec des valeurs différentes</li>
+		<li routerLink="/with-children">Route avec sous-routes enfants</li>
+	</ul>
+</div>
