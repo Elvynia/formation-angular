@@ -1,8 +1,11 @@
 <div class="container">
 	<h2>Bienvenue dans les exemples d'utilisation du router</h2>
-	<p>Utiliser les liens ci-dessous pour naviguer en mode Signe Page Application (SPA). Chaque &lt;li&gt; utilise la directive "routerLink" afin de déclencher la navigation au travers du module Router d'Angular plutôt que via le navigateur. Le but de la navigation SPA est de toujours rester sur la même page web</p>
+	<p>Le module Router d'Angular permet la navigation en "page unique", appelé Single Page Application (SPA), pour pouvoir l'utiliser il faut importer <a href="https://angular.io/api/router/RouterModule">RouterModule</a> dans son module Angular. La différence importante entre une navigation classique et la navigation SPA est que le navigateur ne recharge plus la page HTML (et donc les scripts et styles restent actifs et continuent de "vivre" dans la page). Angular qualifie une page ou vue comme étant une <a href="https://angular.io/api/router/Route">Route</a>. Chaque route est déterminée avec un pattern d'URL (appelé 'path') permettant de déclencher les autres éléments associés à celle-ci. Une route est fréquemment associée à un Component Angular, mais elle peut aussi simplement être une route de redirection ou une route parent qui comporte plusieurs routes enfants avec leur pattern d'URL et leur Component.</p>
+	<p>Utiliser les liens ci-dessous pour naviguer en mode SPA. Chaque &lt;li&gt; utilise la directive "routerLink" afin de déclencher l'analyse de correspondance entre le chemin en valeur et les règles 'path' des routes. Le Router analyse toujours la correspondance des routes en descendant depuis la première route configurée jusqu'à la dernière, dans l'ordre ou elles sont définies dans routes.ts. La dernière route configurée '**' sert donc à dire 'toutes les autres routes qui ne correspondent pas à celles que j'ai configuré au-dessus'. La première route '' correspond à la route à adopter par défaut lorsque l'URL correspond à la racine de l'application Web. Cette URL racine, aussi appelée ContextPath, BaseUrl ou BaseHref, est inscrite dans le fichier index.html : &lt;base href="/"&gt; </p>
+	<p>Pour pouvoir déclencher la navigation vers une route depuis une classe TypeScript, il faut utiliser le service <a href="https://angular.io/api/router/Router">Router</a>.</p>
+	<p>Pour récupérer des informations sur la route active, il faut utiliser le service <a href="https://angular.io/api/router/ActivatedRoute">ActivatedRoute</a>.</p>
 	<form>
-		<h3>Choisissez les données envoyées :</h3>
+		<h3>Choisir les valeurs des paramètres passés aux routes :</h3>
 		<div class="form-group">
 			<label for="urlParam">URL param</label>
 			<input name="urlParam" id="urlParam" [(ngModel)]="urlParam" />
@@ -12,6 +15,7 @@
 			<input name="queryParam" id="queryParam" [(ngModel)]="queryParam" />
 		</div>
 	</form>
+	<h3>Naviguer vers une des routes configurée dans '/routes.ts'</h3>
 	<ul>
 		<!-- Utilisation de la directive routerLink sans les [], ce qui signifie que la valeur est une chaine de caractère constante. -->
 		<li routerLink="/hello">Hello</li>
