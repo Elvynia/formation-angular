@@ -9,10 +9,12 @@
 		<div class="form-group">
 			<label for="urlParam">URL param</label>
 			<input name="urlParam" id="urlParam" [(ngModel)]="urlParam" />
+			<span>(Si le champ est vide la route 'with-url-param' ne pourra pas fonctionner car le paramètre est obligatoire)</span>
 		</div>
 		<div class="form-group">
 			<label for="queryParam">Query param</label>
 			<input name="queryParam" id="queryParam" [(ngModel)]="queryParam" />
+			<span>(Dans le cas de queryParam le paramètre n'est pas obligatoire et la route fonctionne avec le champ vide)</span>
 		</div>
 	</form>
 	<h3>Naviguer vers une des routes configurée dans '/routes.ts'</h3>
