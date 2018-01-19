@@ -1,0 +1,11 @@
+div {
+	border: 2px dashed blue;
+	width: 300px;
+	text-align: center;
+	margin: auto;
+	padding: 5px;
+}
+
+div:hover {
+	cursor: pointer;
+}

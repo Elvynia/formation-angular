@@ -1,0 +1,15 @@
+<h1>Liste des components :</h1>
+<div class="container">
+	<fa-only-view></fa-only-view>
+	<div>
+		<fa-only-content>
+			<h2 #title>Je ne comporte que des éléments 'Content'</h2>
+			<p #para>Etant donné que les éléments ne sont pas dans la template de OnlyContentComponent, les variables 'title' et 'para' ne sont visible que dans la template de AppComponent.</p>
+		</fa-only-content>
+		<ul>
+			<li><a href="#" (click)="swapClass('title', 'bold')">Mettre le titre en gras</a></li>
+			<li><a href="#" (click)="swapClass('para', 'hidden')">Cacher le paragraphe</a></li>
+		</ul>
+	</div>
+	<fa-view-and-content></fa-view-and-content>
+</div>

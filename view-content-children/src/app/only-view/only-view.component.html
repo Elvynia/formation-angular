@@ -1,0 +1,32 @@
+<h2>Je ne comporte que des éléments 'View'</h2>
+<p #para>Tous les éléments HTML à l'intérieur de moi sont inscrits dans ma template. Il n'y a aucun élément HTML qui provient de l'extérieur de "moi". Il est possible de changer la couleur du texte de ce paragraphe. Une variable de template 'para' a été déclarée (grâce au caractère '#') et peut être utilisée dans n'importe quelle expression de ma template.</p>
+<ul>
+	<li>
+		<a href="#" (click)="para.classList.add('hide')">Cacher le paragraphe</a>
+	</li>
+	<li>
+		<a href="#" (click)="para.classList.remove('hide')">Montrer le paragraphe</a>
+	</li>
+</ul>
+<form class="form-inline"><!-- Utilisation de form uniquement pour avoir le style Bootstrap -->
+	<div class="form-group">
+		<label for="paraColor">Couleur :</label>
+		<input id="paraColor" [value]="paraColor" (input)="update($event)" class="form-control" />
+	</div>
+	<button class="btn btn-primary" type="button" (click)="para.style.color=paraColor">Modifier</button>
+</form>
+<div>
+	<fa-sub-view #sub></fa-sub-view>
+	<h4>Utilisation de la variable de template 'sub'</h4>
+	<div class="actions">
+		<button class="btn btn-success" [disabled]="!!sub.intervalId"
+			(click)="sub.start()">Démarrer le timer</button>
+		<button class="btn btn-warning" [disabled]="!sub.intervalId"
+			(click)="sub.stop()">Arrêter le timer</button>
+	</div>
+</div>
+<h3>Démonstration de l'utilisation des annotations @ViewChild et @ViewChildren</h3>
+<div #myChild>
+	Je suis le div géré par la variable 'myChild'.
+</div>
+<button class="btn btn-primary" (click)="useless = 0;">Déclencher AfterViewChecked</button>

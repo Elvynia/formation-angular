@@ -1,0 +1,24 @@
+.hide {
+	opacity: 0;
+}
+
+fa-sub-view {
+	margin: 10px;
+	padding: 5px;
+	border: 3px solid lightgrey;
+	display: block;
+}
+
+h4 {
+	text-align: center;
+}
+
+.actions {
+	margin: auto;
+	width: 300px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-content: center;
+	align-content: center;
+}
