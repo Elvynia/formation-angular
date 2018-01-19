@@ -8,12 +8,12 @@
 		<h3>Choisir les valeurs des paramètres passés aux routes :</h3>
 		<div class="form-group">
 			<label for="urlParam">URL param</label>
-			<input name="urlParam" id="urlParam" [(ngModel)]="urlParam" />
+			<input name="urlParam" id="urlParam" [(ngModel)]="urlParam" class="form-control" />
 			<span>(Si le champ est vide la route 'with-url-param' ne pourra pas fonctionner car le paramètre est obligatoire)</span>
 		</div>
 		<div class="form-group">
 			<label for="queryParam">Query param</label>
-			<input name="queryParam" id="queryParam" [(ngModel)]="queryParam" />
+			<input name="queryParam" id="queryParam" [(ngModel)]="queryParam" class="form-control" />
 			<span>(Dans le cas de queryParam le paramètre n'est pas obligatoire et la route fonctionne avec le champ vide)</span>
 		</div>
 	</form>
