@@ -2,10 +2,10 @@
 <p #para>Tous les éléments HTML à l'intérieur de moi sont inscrits dans ma template. Il n'y a aucun élément HTML qui provient de l'extérieur de "moi". Il est possible de changer la couleur du texte de ce paragraphe. Une variable de template 'para' a été déclarée (grâce au caractère '#') et peut être utilisée dans n'importe quelle expression de ma template.</p>
 <ul>
 	<li>
-		<a href="#" (click)="para.classList.add('hide')">Cacher le paragraphe</a>
+		<a #a (click)="para.classList.add('transparent')">Cacher le paragraphe</a>
 	</li>
 	<li>
-		<a href="#" (click)="para.classList.remove('hide')">Montrer le paragraphe</a>
+		<a #a (click)="para.classList.remove('transparent')">Montrer le paragraphe</a>
 	</li>
 </ul>
 <form class="form-inline"><!-- Utilisation de form uniquement pour avoir le style Bootstrap -->

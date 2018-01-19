@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ViewChildren, QueryList } from '@angular/core';
+import { Component, OnInit, ViewChild, ViewChildren, QueryList, ElementRef } from '@angular/core';
 
 import { SubViewComponent } from '../sub-view/sub-view.component';
 
@@ -10,10 +10,10 @@ import { SubViewComponent } from '../sub-view/sub-view.component';
 export class OnlyViewComponent implements OnInit {
 	paraColor: string;
 	@ViewChild('myChild') div: any;
-	@ViewChildren("fa-sub-view") subViews: QueryList<any>;
+	@ViewChild(SubViewComponent, { read: ElementRef }) subView: ElementRef;
 	@ViewChildren("a") links: QueryList<any>;
 
-	constructor() {
+	constructor(private el: ElementRef) {
 		this.paraColor = 'red';
 	}
 
@@ -35,7 +35,7 @@ export class OnlyViewComponent implements OnInit {
 	inspect() {
 		console.log('Contenu de la propriété div: ' + JSON.stringify(this.div));
 		console.log('Contenu de la propriété links: ' + JSON.stringify(this.links));
-		console.log('Contenu de la propriété subViews: ' + JSON.stringify(this.subViews));
+		console.log('Contenu de la propriété subView: ' + JSON.stringify(this.subView));
 	}
 
 	update(event: Event) {
