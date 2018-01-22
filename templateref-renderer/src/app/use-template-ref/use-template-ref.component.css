@@ -1,0 +1,5 @@
+:host {
+	display: block;
+	border: 3px solid aliceblue;
+	height: 100px;
+}

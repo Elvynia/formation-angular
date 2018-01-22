@@ -1,0 +1,7 @@
+<h2 #title>Démonstration des méthodes de manipulation de la vue</h2>
+<p>Il est parfois nécessaire d'accéder ou de modifier des propriétés des éléments HTML depuis la classe TypeScript du component et non depuis la template. L'API d'angular à ce sujet est l'une des fonctionnalités qui a le plus changé depuis la v2. Pendant longtemps l'utilisation des fonctions des objets du DOM était proscrit, cela causait de nombreux problèmes chez les développeurs ayant besoin de certaines fonctions qui n'ont pas leur Directive correspondante dans angular. La fonction focus() est un exemple classique, car souvent demandée par les clients. <a href="https://stackoverflow.com/questions/38944725/how-to-get-dom-element-in-angular-2">Ce post stackoverflow</a> résume très bien les différentes étapes par lesquelles l'utilisation des méthodes natives est passé. A partir de la v4, l'appel des méthodes natives est autorisé, MAIS, les fonctions de la classe <a href="https://angular.io/api/core/Renderer2#data">Renderer2</a> doivent toujours être favorisées si elle permettent d'implémenter la solution.</p>
+<div class="form-group">
+	<label for="focused">Ce champ obtient le 'focus' du curseur</label>
+	<input id="focused" name="focused" class="form-control" #input />
+	<small>Voir RendererBasicsComponent.ngOnInit()</small>
+</div>

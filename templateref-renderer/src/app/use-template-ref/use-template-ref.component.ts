@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, TemplateRef } from '@angular/core';
+import { Component, OnInit, ViewChild, TemplateRef, ViewContainerRef, HostListener } from '@angular/core';
 
 @Component({
 	selector: 'fa-use-template-ref',
@@ -6,12 +6,20 @@ import { Component, OnInit, Input, TemplateRef } from '@angular/core';
 	styleUrls: ['./use-template-ref.component.css']
 })
 export class UseTemplateRefComponent implements OnInit {
-	@Input() templateUrl: string;
-	@Input() templateRef: TemplateRef<any>;
+	@ViewChild('tpl') template: TemplateRef<any>;
 
-	constructor() { }
+	constructor(private viewContainerRef: ViewContainerRef) { }
 
 	ngOnInit() {
 	}
 
+	@HostListener('mouseenter')
+	visible() {
+		this.viewContainerRef.createEmbeddedView(this.template);
+	}
+
+	@HostListener('mouseleave')
+	hidden() {
+		this.viewContainerRef.clear();
+	}
 }
